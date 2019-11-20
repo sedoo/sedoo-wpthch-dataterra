@@ -120,6 +120,12 @@ function sedoo_wpthch_dataterra_tag_widget_limit($args){
  return $args;
 }
 
+/***
+ * REGISTER MENU AREA
+ */
+
+register_nav_menus(array('footer-menu' => 'Navigation footer'));
+
 /**
  * Include ACF Fields
  */

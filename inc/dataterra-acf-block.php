@@ -5,17 +5,6 @@
 
 function sedoo_wpthch_dataterra_register_acf_block_types() {
 
-    // register a list of members block (dataterra).
-    acf_register_block_type(array(
-        'name'              => 'sscmembers',
-        'title'             => __('SSC members & Officers'),
-        'description'       => __('List SSC members block.'),
-        'render_template'   => 'template-parts/blocks/sscmembers/sscmembers.php',
-        'category'          => 'widgets',
-        'icon'              => 'groups',
-        'keywords'          => array( 'ssc', 'user' ),
-    ));
-
     // register a post list block.
     acf_register_block_type(array(
         'name'              => 'postlist',
@@ -32,6 +21,5 @@ function sedoo_wpthch_dataterra_register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'sedoo_wpthch_dataterra_register_acf_block_types');
 }
-
 
 ?>

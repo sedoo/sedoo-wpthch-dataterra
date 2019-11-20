@@ -45,19 +45,19 @@ $options_list_footer = get_field('list_choice', 'option');
                 <?php endwhile; ?>
                 <?php endif; ?>
             </div>
-            <!-- <div class="footer-menu"> -->
-                <!-- <?php if (has_nav_menu('primary-menu')) {
+            <div class="footer-menu">
+                <?php if (has_nav_menu('footer-menu')) {
                     wp_nav_menu( array(
-                        'theme_location' => 'primary-menu',
-                        'menu_id'        => 'primary-menu',
+                        'theme_location' => 'footer-menu',
+                        'menu_id'        => 'footer-menu',
                     ) );
                 } else{
                     wp_nav_menu( array(
                         'theme_location' => 'burger-menu',
                         'menu_id'        => 'burger-menu',
                     ) );
-                }?> -->
-            <!-- </div> -->
+                }?> 
+            </div>
             <ul class="footer-categories">
                 <?php if( $options_list_footer === 'categories'){
                     wp_list_categories(array(

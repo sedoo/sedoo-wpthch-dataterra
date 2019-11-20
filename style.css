@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.6.3
+Version:      0.6.4
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -20,7 +20,12 @@ OVERRIDE CSS
 */
 
 :root {
-    --main-color:#309fb3;
+    --main-color:#1eae9c;
+    --second-color:#1e1f4f;
+    --aeris-color:#3DB5E5;
+    --formater-color:#B8412C;
+    --ocean-color:#2669A1;
+    --theia-color:#F27B34;
 }
 
 div[id="page"] {
@@ -406,6 +411,32 @@ ol.tribe-list-widget h4 {
     background: url("image/logo_instagram.svg") no-repeat;
 }
 
+/**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
+
+footer[id="colophon"] {
+    background: var(--second-color);
+    padding: 50px 0 0;
+}
+
+/*** FOOTER MENU ***/
+
+[id="footer-menu"] *{
+    color:#FFF;
+}
+
+[id="footer-menu"] > li {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+[id="footer-menu"] > li li {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+
+
 /*** INTRANET FOOTER LINK ***/
 
 .copyright .wrapper.site-info {
@@ -426,65 +457,40 @@ footer .intranet li a:hover img {
     margin-top:0;
 }
 
-/*** BLOCK SSC MEMBERS ***/
-
-[data-role="listSscMembers"] > article {
-    padding: 15px;
-    border-bottom: 1px solid #CCC;
-    font-family: arial;
-    letter-spacing: 1px;
-    font-size: 1.4rem;
-    position: relative;
+/*** ATMOSPHERE ***/
+.category-atmosphere .entry-header p {
+	background:var(--aeris-color);
+}
+.post-wrapper .post.category-atmosphere {
+	border-color:var(--aeris-color);
 }
 
-.firstletterList {
-    position:absolute;
-    left:-30px;
-    top:0;
-    font-size: 3rem;
+/*** OCEAN ***/
+.category-ocean .entry-header p {
+	background:var(--ocean-color);
+}
+.post-wrapper .post.category-ocean {
+		border-color:var(--ocean-color);
+}
+/*** SURFACES CONTINENTALES ***/
+.category-surfaces-continentales .entry-header p {
+	background:var(--theia-color);
+}
+.post-wrapper .post.category-surfaces-continentales {
+	border-color:var(--theia-color);
 }
 
-[data-role="listSscMembers"] > article > header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
+/*** TERRE SOLIDE ***/
+.category-terre-solide .entry-header p {
+	background:var(--formater-color);
 }
-/* [data-role="listSscMembers"] > article > header > div:last-of-type{
-    width: 100%;
-} */
-
-[data-role="listSscMembers"] > article > label {
-    position: absolute;
-    top:10px;
-    right:-20px;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    background: var(--main-color);
-    color:#FFF;
-    font-size: 2.3rem;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    cursor: pointer;
-}
-[data-role="listSscMembers"] > article > label:hover {
-    background:#FFF;
-    color: var(--main-color);
-    border: 1px solid  var(--main-color);
+.post-wrapper .post.category-terre-solide {
+	border-color:var(--formater-color);
 }
 
-[data-role="listSscMembers"] input[type="radio"] {
-    display: none;
-}
-
-[data-role="listSscMembers"] input[type="radio"] + div {
-    display: none;
-}
-[data-role="listSscMembers"] input[type="radio"]:checked + div {
-    display: block;
+/*** GLOBAL ***/
+.post-wrapper .post {
+	border-color:#1eae9c;
 }
 
 
