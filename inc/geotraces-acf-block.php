@@ -3,9 +3,9 @@
  * ACF gutenberg Block
  */
 
-function sedoo_wpthch_geotraces_register_acf_block_types() {
+function sedoo_wpthch_dataterra_register_acf_block_types() {
 
-    // register a list of members block (geotraces).
+    // register a list of members block (dataterra).
     acf_register_block_type(array(
         'name'              => 'sscmembers',
         'title'             => __('SSC members & Officers'),
@@ -30,7 +30,7 @@ function sedoo_wpthch_geotraces_register_acf_block_types() {
 
 // Check if function exists and hook into setup.
 if( function_exists('acf_register_block_type') ) {
-    add_action('acf/init', 'sedoo_wpthch_geotraces_register_acf_block_types');
+    add_action('acf/init', 'sedoo_wpthch_dataterra_register_acf_block_types');
 }
 
 

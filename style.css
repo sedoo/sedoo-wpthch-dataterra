@@ -1,16 +1,16 @@
 /*
-Theme Name:   Geotraces theme
-Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
-Description:  Geotraces, Labs by sedoo Child Theme
+Theme Name:   dataterra theme
+Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
+Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
 Version:      0.6.3
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
-Text Domain: sedoo-wpthch-geotraces
+Text Domain: sedoo-wpthch-dataterra
 Domain Path: /languages
 Tags: 
-GitHub Theme URI: sedoo/sedoo-wpthch-geotraces
+GitHub Theme URI: sedoo/sedoo-wpthch-dataterra
 GitHub Branch: master
 */
 
@@ -352,8 +352,8 @@ span.tag-cloud-link {
     margin-bottom:20px;
 }
 
-[class*="tribe-events-category-geotraces"] span.tag-cloud-link,
-span.tag-cloud-link[class*="geotraces"] {
+[class*="tribe-events-category-dataterra"] span.tag-cloud-link,
+span.tag-cloud-link[class*="dataterra"] {
     background: var(--main-color);
     color:#FFF;
 }

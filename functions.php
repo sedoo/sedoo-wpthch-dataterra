@@ -5,7 +5,7 @@ function theme_enqueue_styles() {
 
 }
 
-function sedoo_wpthch_geotraces_widgets_init() {
+function sedoo_wpthch_dataterra_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => 'Home right sidebar',
@@ -17,10 +17,10 @@ function sedoo_wpthch_geotraces_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
+add_action( 'widgets_init', 'sedoo_wpthch_dataterra_widgets_init' );
 
 
-function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset) {
+function sedoo_wpthch_dataterra_postlist_by_term($title, $term, $layout, $limit, $offset) {
     global $post;
     
     $argsListPost = array(
@@ -94,9 +94,9 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
  * DEFAULT IMAGE ATTACHMENT SETTINGS
  */
 
-add_action( 'after_setup_theme', 'sedoo_wpthch_geotraces_default_image_settings' );
+add_action( 'after_setup_theme', 'sedoo_wpthch_dataterra_default_image_settings' );
 
-function sedoo_wpthch_geotraces_default_image_settings() {
+function sedoo_wpthch_dataterra_default_image_settings() {
     update_option( 'image_default_align', 'center' );
     update_option( 'image_default_link_type', 'none' );
     update_option( 'image_default_size', 'medium' );
@@ -107,10 +107,10 @@ function sedoo_wpthch_geotraces_default_image_settings() {
  */
 
 //Register tag cloud filter callback
-add_filter('widget_tag_cloud_args', 'sedoo_wpthch_geotraces_tag_widget_limit');
+add_filter('widget_tag_cloud_args', 'sedoo_wpthch_dataterra_tag_widget_limit');
  
 //Limit number of tags inside widget
-function sedoo_wpthch_geotraces_tag_widget_limit($args){
+function sedoo_wpthch_dataterra_tag_widget_limit($args){
  
  //Check if taxonomy option inside widget is set to tags
  if(isset($args['taxonomy']) && $args['taxonomy'] == 'post_tag'){
@@ -123,6 +123,6 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
 /**
  * Include ACF Fields
  */
-require 'inc/geotraces-acf-config.php';
-require 'inc/geotraces-acf-block.php';
+require 'inc/dataterra-acf-config.php';
+require 'inc/dataterra-acf-block.php';
 ?>

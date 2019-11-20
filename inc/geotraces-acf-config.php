@@ -3,12 +3,12 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5dcbd7832f6dd',
-	'title' => 'Geotraces SSC users informations',
+	'title' => 'dataterra SSC users informations',
 	'fields' => array(
 		array(
 			'key' => 'field_5dcbd78b504f4',
 			'label' => 'Institute / laboratory address',
-			'name' => 'geotraces_user_address',
+			'name' => 'dataterra_user_address',
 			'type' => 'textarea',
 			'instructions' => '',
 			'required' => 0,
@@ -27,7 +27,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5dcbd9ff504f5',
 			'label' => 'Phone number',
-			'name' => 'geotraces_user_phone',
+			'name' => 'dataterra_user_phone',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
@@ -46,7 +46,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5dcd27d8a4deb',
 			'label' => 'Group',
-			'name' => 'geotraces_user_group',
+			'name' => 'dataterra_user_group',
 			'type' => 'checkbox',
 			'instructions' => '',
 			'required' => 0,
@@ -72,7 +72,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5dcd2845a4dec',
 			'label' => 'Country',
-			'name' => 'geotraces_user_country',
+			'name' => 'dataterra_user_country',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,

@@ -12,6 +12,6 @@ if (empty($term)) {
     $term = $term->slug;
 }
 // SHOW POST LIST
-sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset);
+sedoo_wpthch_dataterra_postlist_by_term($title, $term, $layout, $limit, $offset);
 
 ?>
