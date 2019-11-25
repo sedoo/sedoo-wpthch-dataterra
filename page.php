@@ -18,15 +18,7 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <?php
-            if (get_the_post_thumbnail()) {
-            ?>
-                <header id="cover">
-                    <?php the_post_thumbnail(); ?>
-                </header>
-            <?php 
-            }
-            ?>
+            
             <div class="wrapper-content">
                 <?php
                 while ( have_posts() ) :

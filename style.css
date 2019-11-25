@@ -19,6 +19,7 @@ GitHub Branch: master
 OVERRIDE CSS 
 */
 
+/*** COLORS UPDATE **/
 :root {
     --main-color:#1eae9c;
     --second-color:#1e1f4f;
@@ -28,8 +29,18 @@ OVERRIDE CSS
     --theia-color:#F27B34;
 }
 
+nav[id="primary-navigation"] ul li a {
+    color:#FFF;
+}
+
+body,
+nav[id="primary-navigation"] ul li a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 div[id="page"] {
-    padding: 110px 20px 20px;
+    padding: 0 20px 20px;
 }
 
 .home header[id="cover"]::before, 
@@ -47,6 +58,10 @@ h1, .h1 {
 
 h2, .h2 {
     font-size: 2.5rem;
+}
+
+h2, .h2, nav[id="burger-navigation"] .overlay .slick-slide .menu-item a {
+    font-family: 'Open Sans', sans-serif;
 }
 
 p {
@@ -152,6 +167,15 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 .wrapper-layout a.nohover:hover img {
     box-shadow: 1px 1px 3px var(--main-color);
 }
+/*** HEADER ***/
+header[id="masthead"] {
+    position: static;
+    height: 35vh;
+    background-position: center;
+    background-color:transparent;
+    background-size: cover;
+}
+
 
 /*** HOMEPAGE **/
 
@@ -159,6 +183,10 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     display:flex;
     flex-flow: row wrap;
     padding:70px 0;
+}
+
+.home #page header[id="cover"] {
+    height: 100vh;
 }
 
 .home #primary > main {
@@ -171,6 +199,11 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 
 .home h2 {
     font-size:3.5rem;
+}
+
+/**** PAGE ***/ 
+#page header[id="cover"] {
+    height: 45vh;
 }
 
 /** ARCHIVE ***/
@@ -435,8 +468,6 @@ footer[id="colophon"] {
     font-weight: normal;
 }
 
-
-
 /*** INTRANET FOOTER LINK ***/
 
 .copyright .wrapper.site-info {
@@ -457,6 +488,10 @@ footer .intranet li a:hover img {
     margin-top:0;
 }
 
+/*** BUTTON **/
+.wp-block-button .wp-block-button__link {
+    border-radius: 50px;
+}
 /*** ATMOSPHERE ***/
 .category-atmosphere .entry-header p {
 	background:var(--aeris-color);

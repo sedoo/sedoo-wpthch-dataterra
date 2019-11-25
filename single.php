@@ -21,8 +21,8 @@ if (is_array($categories) || is_object($categories))
 
 while ( have_posts() ) : the_post();
 
-$themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
-$themeSlugRewrite = "sedoo-theme-labo";
+$themes = get_the_terms( $post->ID, 'category');  
+$themeSlugRewrite = "category";
 ?>
 	<div id="primary" class="content-area <?php echo esc_html( $categories[0]->slug );?>">
         <?php
@@ -41,8 +41,8 @@ $themeSlugRewrite = "sedoo-theme-labo";
                         <h1><?php the_title(); ?></h1>
                         <div>
                             <?php 
-                            if( function_exists('sedoo_labtools_show_categories') ){
-                            sedoo_labtools_show_categories($themes, $themeSlugRewrite);
+                            if( function_exists('sedoo_wpthch_dataterra_show_categories') ){
+                            sedoo_wpthch_dataterra_show_categories($themes, $themeSlugRewrite);
                             }
                             ?>
                             <p class="post-meta"><?php the_date(); ?></p>

@@ -120,6 +120,37 @@ function sedoo_wpthch_dataterra_tag_widget_limit($args){
  return $args;
 }
 
+/******************************************************************
+ * Afficher les archives des custom taxonomies
+ * $categories = get_the_terms( $post->ID, 'category');  
+ */
+
+function sedoo_wpthch_dataterra_show_categories($categories, $slugRewrite) {
+ 
+    if( $categories ) {
+    ?>
+    <div class="tag">
+    <?php
+        foreach( $categories as $categorie ) { 
+            if ($categorie->slug !== "non-classe") {
+                // if ( "en" == pll_current_language()) {
+                //     echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // } else {
+                    echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // }
+                echo $categorie->name; 
+                ?>                    
+            </a>
+    <?php 
+            }
+        }
+    ?>
+    </div>
+  <?php
+      } 
+  }
+
+
 /***
  * REGISTER MENU AREA
  */
