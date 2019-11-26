@@ -7,17 +7,6 @@ $description = get_bloginfo( 'description', 'display' );
 
 get_header();
 ?>
-<header id="cover" class="site-branding" style="background-image:url(<?php header_image()?>);">
-            <div class="wrapper">
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                <?php
-                if ( $description || is_customize_preview() ) { ?>
-                <h2 class="site-description"><?php echo $description; ?></h2>
-                    <?php
-                }
-                ?>
-            </div>
-        </header>
 <div id="primary" class="content-area wrapper-layout home-content">
     <main id="main" class="site-main">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

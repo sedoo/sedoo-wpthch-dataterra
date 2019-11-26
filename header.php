@@ -23,6 +23,12 @@
     wp_head(); 
     $page_id = get_queried_object_id();
     $cover = get_the_post_thumbnail_url($page_id, 'cover');
+    if (get_the_post_thumbnail_url($page_id, 'cover')) {
+        $cover = get_the_post_thumbnail_url($page_id, 'cover');
+    } else {
+        $cover = get_header_image();
+    }
+    $title = get_the_title($page_id);
     ?>
 </head>
 
@@ -30,9 +36,8 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'labs-by-sedoo' ); ?></a>
 
-<header id="masthead" class="site-header" <?php if (!is_front_page()) { ?>style="background-image:url(<?php echo $cover;?>);" <?php }?>>
-        
-        <div class="wrapper">
+<header id="masthead" class="site-header " style="background-image:url(<?php if (!is_front_page()) { echo $cover; } else { header_image(); }?>);">
+     <div class="wrapper">
             <div class="site-branding">
                 <?php the_custom_logo(); ?>
             </div><!-- .site-branding -->
@@ -106,6 +111,35 @@
                    endif;
                 ?>
             </div>
+            
+            <div class="wrapper header-title">
+            <?php if (is_front_page()) {
+            ?>
+                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                <?php
+                if ( $description || is_customize_preview() ) { ?>
+                <h2 class="site-description"><?php echo $description; ?></h2>
+                    <?php
+                }
+                ?>
+            <?php } else { ?>
+                <h1 class="site-title"><?php echo $title ?>
+                <?php if (get_field('dataterra_subtitle')) {
+                    ?>
+                    <small><?php the_field('dataterra_subtitle');?></small>
+                <?php
+                }
+                ?>
+                </h1>
+                
+            <?php
+
+            }
+                ?>
+            </div>
+            
+
+
         </div>
 	</header><!-- #masthead -->
 
