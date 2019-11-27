@@ -59,25 +59,25 @@ $themeSlugRewrite = "category";
             <div>
             <?php
             $args = array(
-                'post_type'             => 'post',
+                'post_type'             => 'success-story',
                 'post_status'           => array( 'publish' ),
                 'posts_per_page'        => '2',           
                 'post__not_in'          => array(get_the_ID()), 
                 'orderby'               => 'date',
                 'order'                 => 'DESC',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'category',
-                        'field'    => 'slug',
-                        'terms'    => $terms,
-                    ),
-                ),
+                // 'tax_query' => array(
+                //     array(
+                //         'taxonomy' => 'category',
+                //         'field'    => 'slug',
+                //         'terms'    => $terms,
+                //     ),
+                // ),
             );
             $the_query = new WP_Query( $args );
 
             if ( $the_query->have_posts() ) {  
             ?>
-                <h2><?php echo __("Autres actualités en relation", 'sedoo-wpth-labs'); ?> :</h2>
+                <h2><?php echo __("Autres \"success stories\"", 'sedoo-wpth-labs'); ?> :</h2>
                 <div class="post-loop">
                 <?php                
                     while ( $the_query->have_posts() ) {
@@ -93,9 +93,11 @@ $themeSlugRewrite = "category";
                                     the_post_thumbnail();
                                 } else {
                                     if (catch_that_image() ==  "no_image" ){
-                                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-                                        <img class="object-fit-contain" src="<?php echo $image[0]; ?>" alt="" />
+                                        // $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                        // $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); 
+                                        $image = get_header_image();
+                                        ?>
+                                        <img class="object-fit-contain" src="<?php echo $image; ?>" alt="" />
                                     <?php } else {
                                         echo '<img src="';
                                         echo catch_that_image();

@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: Page de pôle
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,7 +11,7 @@ get_header();
 
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area pole">
 		<main id="main" class="site-main">
             
             <div class="wrapper-content">
@@ -24,12 +19,29 @@ get_header();
                 while ( have_posts() ) :
                     the_post();
 
-                    get_template_part( 'template-parts/content', 'page' );
+                    if (get_field('dataterra_pole_logo')) { 
+                        $image = get_field('dataterra_pole_logo');
+                        $size = 'medium';
+                        $thumb = $image['sizes'][ $size ];
+                    ?>
+                    <figure class="logo-pole">
+                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                    </figure>
+                    <?php }
 
-                    // If comments are open or we have at least one comment, load up the comment template.
-                    // if ( comments_open() || get_comments_number() ) :
-                    //     comments_template();
-                    // endif;
+                    get_template_part( 'template-parts/content', 'page' );
+                    
+                    if (get_field('dataterra_pole_link')) { 
+                        $link = get_field('dataterra_pole_link');
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                        <div class="wp-block-button aligncenter">
+                            <a class="wp-block-button__link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        </div>
+                    <?php }
+                    
 
                 endwhile; // End of the loop.
                 ?>

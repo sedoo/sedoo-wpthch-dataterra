@@ -14,6 +14,33 @@ function sedoo_wpthch_dataterra_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 1',
+		'id'            => 'footer_menu_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 2',
+		'id'            => 'footer_menu_2',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 3',
+		'id'            => 'footer_menu_3',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
 	) );
 
 }
@@ -120,9 +147,51 @@ function sedoo_wpthch_dataterra_tag_widget_limit($args){
  return $args;
 }
 
+/******************************************************************
+ * Afficher les archives des custom taxonomies
+ * $categories = get_the_terms( $post->ID, 'category');  
+ */
+
+function sedoo_wpthch_dataterra_show_categories($categories, $slugRewrite) {
+ 
+    if( $categories ) {
+    ?>
+    <div class="tag">
+    <?php
+        foreach( $categories as $categorie ) { 
+            if ($categorie->slug !== "non-classe") {
+                // if ( "en" == pll_current_language()) {
+                //     echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // } else {
+                    echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // }
+                echo $categorie->name; 
+                ?>                    
+            </a>
+    <?php 
+            }
+        }
+    ?>
+    </div>
+  <?php
+      } 
+  }
+
+
+/***
+ * REGISTER MENU AREA
+ */
+
+// register_nav_menus(array('footer-menu' => 'Navigation footer'));
+
 /**
  * Include ACF Fields
  */
 require 'inc/dataterra-acf-config.php';
 require 'inc/dataterra-acf-block.php';
+require 'inc/dataterra-custom-post.php';
+
+
+
+
 ?>
