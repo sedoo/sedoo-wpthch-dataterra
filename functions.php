@@ -162,4 +162,9 @@ register_nav_menus(array('footer-menu' => 'Navigation footer'));
  */
 require 'inc/dataterra-acf-config.php';
 require 'inc/dataterra-acf-block.php';
+require 'inc/dataterra-custom-post.php';
+
+
+
+
 ?>

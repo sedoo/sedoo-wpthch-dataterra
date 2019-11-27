@@ -22,7 +22,7 @@
     <?php 
     wp_head(); 
     $page_id = get_queried_object_id();
-    $cover = get_the_post_thumbnail_url($page_id, 'cover');
+    // $cover = get_the_post_thumbnail_url($page_id, 'cover');
     if (get_the_post_thumbnail_url($page_id, 'cover')) {
         $cover = get_the_post_thumbnail_url($page_id, 'cover');
     } else {

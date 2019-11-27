@@ -60,9 +60,12 @@ img[src$=".svg"] { width: 100%; height: auto; }
     display: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-family: Next;
+}
+
 h1, .h1 {
     font-size: 5rem;
-    font-family: Next;
     color:#FFF;
 }
 h1::after {
@@ -70,10 +73,10 @@ h1::after {
 }
 
 h2, .h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
-h2, .h2, nav[id="burger-navigation"] .overlay .slick-slide .menu-item a {
+nav[id="burger-navigation"] .overlay .slick-slide .menu-item a {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -175,6 +178,10 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 	margin-right:1.5em;
 }
 
+.wrapper-layout {
+    padding:0 20px 70px;
+}
+
 .wrapper-layout a.nohover:hover {
     background:transparent;
 }
@@ -182,12 +189,16 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     box-shadow: 1px 1px 3px var(--main-color);
 }
 /*** HEADER ***/
+
+
+
 header[id="masthead"] {
     position: static;
     height: 35vh;
     background-position: center;
     background-color:transparent;
     background-size: cover;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
 header[id="masthead"] > .wrapper {
@@ -224,6 +235,14 @@ header[id="masthead"] .wrapper .header-title {
 .home h2 {
     font-size:3.5rem;
 }
+
+/*** NAV MAIN  ***/
+/* nav[id="primary-navigation"] ul li:hover,
+nav[id="primary-navigation"] ul li:hover a,
+ul[id="primary-menu"] .menu-item .sub-menu {
+    background:var(--second-color) !important;
+} */
+
 
 /**** PAGE ***/ 
 #page header[id="cover"] {
@@ -357,11 +376,30 @@ header[id="masthead"] .wrapper .header-title {
 
 /****************   SINGLE   ***************/
 
-.single-post main, .single-event main {
+.single-post main, 
+.single-event main,
+.single-success-story main {
     width:auto;
     max-width: 900px;
     flex:1 1 700px;
     margin-bottom:0;
+}
+
+.single-success-story .wrapper-layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.single-success-story .wrapper-layout {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .single main + aside {
@@ -436,6 +474,43 @@ ol.tribe-list-widget h4 {
     margin-bottom:0;
 }
 
+
+/***  SUCCESS STORY  ***/
+
+[id="success-story-area"] {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+[id="success-story-area"] .wrapper-story {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+[id="success-story-area"] h2 > span {
+    background:var(--main-color);
+    color:white;
+    padding:5px 20px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+[id="success-story-area"] h3 {
+    font-size:inherit;
+    color:white;
+    width: 50%;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+[id="success-story-area"] p {
+    font-size:inherit;
+    color:white;
+    width: 75%;
+}
+
 /*****  SOCIAL LINK  ****/
 
 #shortcuts li.social-link:hover {
@@ -471,8 +546,11 @@ ol.tribe-list-widget h4 {
 /**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
 
 footer[id="colophon"] {
-    background: var(--second-color);
-    padding: 50px 0 0;
+    background-color: var(--second-color);
+    background-image:url(image/icone-dataterra-fonce.svg);
+    background-repeat: no-repeat;
+    background-position: center 100px;
+    padding: 50px 0 50px;
 }
 
 /*** FOOTER MENU ***/
@@ -521,7 +599,19 @@ footer .intranet li a:hover img {
 /*** BUTTON **/
 .wp-block-button .wp-block-button__link {
     border-radius: 50px;
+    background: #FFF !important;
+    border:1px solid #000  !important;
+    color:#000  !important;
+    text-transform: uppercase;
+    box-shadow: none;
+    font-size:1.3rem;
 }
+.wp-block-button .wp-block-button__link:hover {
+    background: var(--main-color) !important;
+    color:#FFF !important;
+    border-color:var(--main-color) !important;
+}
+
 /*** ATMOSPHERE ***/
 .category-atmosphere .entry-header p {
 	background:var(--aeris-color);

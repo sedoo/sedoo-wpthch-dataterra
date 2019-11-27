@@ -28,4 +28,51 @@ get_header();
 </div><!-- #primary -->
 
 <?php
+/**
+ * SUCCESS STORY AREA
+ */
+$args = array(
+    'post_type'             => 'success-story',
+    'post_status'           => array( 'publish' ),
+    'posts_per_page'        => '1',           
+    'orderby'               => 'date',
+    'order'                 => 'DESC',
+    // 'tax_query' => array(
+    //     array(
+    //         'taxonomy' => 'category',
+    //         'field'    => 'slug',
+    //         'terms'    => $terms,
+    //     ),
+    // ),
+);
+$the_query = new WP_Query( $args );
+
+if ( $the_query->have_posts() ) {              
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        if (get_the_post_thumbnail_url(get_the_ID(), 'cover')) {
+            $cover = get_the_post_thumbnail_url(get_the_ID(), 'cover');
+        } else {
+            $cover = get_header_image();
+        }
+        ?>
+        <section id="success-story-area" style="background-image:url(<?php echo $cover; ?>);">
+            <div class="wrapper-story">
+                <h2><span>Success story</span></h2>
+                <a class="post-preview" href="<?php the_permalink(); ?>">   
+                    <h3><?php the_title(); ?></h3>
+                    <p><?php the_excerpt();?></p>
+
+                    
+                </a>
+            </div>
+        </section>
+    <?php
+    }
+} 
+/* Restore original Post Data */
+wp_reset_postdata();
+?>     
+
+<?php
 get_footer();
