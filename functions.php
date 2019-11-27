@@ -14,6 +14,33 @@ function sedoo_wpthch_dataterra_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 1',
+		'id'            => 'footer_menu_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 2',
+		'id'            => 'footer_menu_2',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => 'Footer menu 3',
+		'id'            => 'footer_menu_3',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
 	) );
 
 }
@@ -155,7 +182,7 @@ function sedoo_wpthch_dataterra_show_categories($categories, $slugRewrite) {
  * REGISTER MENU AREA
  */
 
-register_nav_menus(array('footer-menu' => 'Navigation footer'));
+// register_nav_menus(array('footer-menu' => 'Navigation footer'));
 
 /**
  * Include ACF Fields

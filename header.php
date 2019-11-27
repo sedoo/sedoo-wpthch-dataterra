@@ -29,6 +29,7 @@
         $cover = get_header_image();
     }
     $title = get_the_title($page_id);
+    
     ?>
 </head>
 
@@ -115,27 +116,63 @@
             <div class="wrapper header-title">
             <?php if (is_front_page()) {
             ?>
-                <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                <h1 class="site-title screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
                 <?php
-                if ( $description || is_customize_preview() ) { ?>
-                <h2 class="site-description"><?php echo $description; ?></h2>
-                    <?php
-                }
-                ?>
-            <?php } else { ?>
-                <h1 class="site-title"><?php echo $title ?>
-                <?php if (get_field('dataterra_subtitle')) {
-                    ?>
-                    <small><?php the_field('dataterra_subtitle');?></small>
-                <?php
-                }
-                ?>
-                </h1>
-                
-            <?php
+                // $description = ;
+                if ( !empty(get_bloginfo( 'description' )) ) { ?>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                <?php } ?>
 
-            }
+                <?php if (get_field('dataterra_home_description', $page_id)) { ?>
+                    <p><?php the_field('dataterra_home_description', $page_id);?></p>
+                <?php } ?>
+
+                <div id="home-button">
+
+                <?php if (get_field('dataterra_home_link1', $page_id)) {
+                    $link = get_field('dataterra_home_link1', $page_id);
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    <div>
+                        <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                    </div>
+                <?php } ?>
+
+                <?php if (get_field('dataterra_home_link2', $page_id)) { 
+                    $link = get_field('dataterra_home_link2', $page_id);
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    <div>
+                        <a class="homelink2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                    </div>
+                <?php } ?>
+
+                </div>                
+            <?php } else { ?>
+                <h1 class="site-title"><?php echo $title; ?>  
+
+                <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
+                    <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
+                <?php } ?>
+
+                </h1>
+
+                <?php if (get_field('dataterra_pole_link', $page_id)) { 
+                $link = get_field('dataterra_pole_link', $page_id);
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
                 ?>
+                <div>
+                    <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                </div>
+                <?php } ?>            
+
+            <?php } ?>
             </div>
             
 

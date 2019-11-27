@@ -93,9 +93,11 @@ $themeSlugRewrite = "category";
                                     the_post_thumbnail();
                                 } else {
                                     if (catch_that_image() ==  "no_image" ){
-                                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-                                        <img class="object-fit-contain" src="<?php echo $image[0]; ?>" alt="" />
+                                        // $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                        // $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); 
+                                        $image = get_header_image();
+                                        ?>
+                                        <img class="object-fit-contain" src="<?php echo $image; ?>" alt="" />
                                     <?php } else {
                                         echo '<img src="';
                                         echo catch_that_image();

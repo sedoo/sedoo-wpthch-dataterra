@@ -22,7 +22,7 @@ get_header();
         <?php dynamic_sidebar( 'home_right_1' ); ?>
 
 
-    </div><!-- #primary-sidebar -->
+    </aside><!-- #primary-sidebar -->
     <?php endif; ?>
 
 </div><!-- #primary -->
