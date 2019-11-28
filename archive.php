@@ -18,24 +18,8 @@ $cover = get_field( 'tax_image', $term);
 ?>
 
 	<div id="content-area" class="wrapper archives">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main">	
 		<?php
-		if ( !empty($cover)) {
-				$coverStyle = "background-image:url(".$cover['url'].")";
-			} else {
-				$coverStyle = "border-top:5px solid #309fb3;height:auto;";
-			}
-			?>
-			
-			<header id="cover" class="page-header" style="<?php echo $coverStyle;?>">
-							
-			</header><!-- .page-header -->
-			<h1 class="page-title">
-				<?php
-				single_cat_title('', true);
-				?>
-			</h1>
-			<?php
 			if (get_the_archive_description()) {
 				the_archive_description( '<div class="archive-description">', '</div>' );
 			}

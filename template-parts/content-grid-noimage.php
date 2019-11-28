@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>"></a>
     <?php
-    if (!is_front_page()) {
+    //if (!is_front_page()) {
     ?>
 	<header class="entry-header">
         <p>
@@ -26,7 +26,7 @@
         </p>
     </header><!-- .entry-header -->
     <?php    
-    }
+    //}
     ?>
     <div class="group-content">
         <div class="entry-content">
@@ -39,7 +39,7 @@
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
             <?php endif; ?>
-            <a href="<?php the_permalink(); ?>"><?php echo __('See more', 'sedoo-wpth-labs'); ?> →</a>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Lire plus', 'sedoo-wpth-labs'); ?> →</a>
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-->

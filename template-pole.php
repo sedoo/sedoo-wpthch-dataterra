@@ -13,7 +13,6 @@ get_header();
 
 	<div id="primary" class="content-area pole">
 		<main id="main" class="site-main">
-            
             <div class="wrapper-content">
                 <?php
                 while ( have_posts() ) :
