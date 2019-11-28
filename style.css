@@ -76,6 +76,10 @@ h2, .h2 {
     font-size: 3rem;
 }
 
+h3 {
+	margin-top:20px
+}
+
 .wrapper-content h2 + a + h3, 
 .wrapper-content h2 + h3, 
 .wrapper-layout h2 + a + h3, 
@@ -87,6 +91,9 @@ h2, .h2 {
     margin-top: -20px;
     margin-bottom: 20px;
 
+}
+.wrapper-layout p + a + h3 {
+	margin-top:20px;
 }
 
 article ul, 
@@ -148,6 +155,10 @@ th, td {
 
 blockquote {
     font-size: 3.1rem;
+}
+
+.wp-block-image figcaption {
+    margin-top: 10px;
 }
 
 #content {
@@ -221,24 +232,32 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 
 header[id="masthead"] {
     position: static;
-    height: 400px;
     background-position: center;
     background-color:transparent;
     background-size: cover;
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
+h1.site-title,
+h2.site-description,
+.home header[id="masthead"] .wrapper .header-title p {
+    background:rgba(0,0,0,.2);
+    padding:10px 20px 0;
+}
+
 header[id="masthead"] > .wrapper {
+    min-height: 400px;
     flex-wrap: wrap;
-    align-items: space-between;
+    align-content: space-around;
 }
 
 header[id="masthead"] .wrapper .header-title {
     width: 100%;
-    padding:70px 20px;
+    /* padding:70px 20px; */
     flex-flow:wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    min-height: 270px;
 }
 header[id="masthead"] .wrapper .header-title h1 {
     text-align: center;
@@ -249,16 +268,24 @@ header[id="masthead"] .wrapper .header-title small{
     font-weight: bold;
     margin-bottom: 30px;
 }
+
+header#cover {
+	display:none;
+}
 /*** HOMEPAGE **/
 
 .home #primary {
     display:flex;
     flex-flow: row wrap;
-    padding:70px 0;
+    padding:0 0 70px;
 }
 
-.home #page header[id="masthead"] {
-    height: 600px;
+.home #page header[id="masthead"] > .wrapper {
+    min-height: 500px;
+}
+
+.home header[id="masthead"] .wrapper .header-title {
+    min-height: 300px;
 }
 
 .home header[id="masthead"] .wrapper .header-title h2.site-description{
@@ -272,7 +299,6 @@ header[id="masthead"] .wrapper .header-title small{
 .home header[id="masthead"] .wrapper .header-title p {
     width: 50%;
     padding:20px;
-    background:rgba(0,0,0,.2);
     margin:30px auto;
     font-size:1.5rem;
     color:#FFF;
@@ -359,6 +385,11 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 }
 
 /** ARCHIVE ***/
+
+.archive .page-title {
+	color:#000;
+}
+
 .archives header#cover{
     margin-bottom:20px;
 }
@@ -511,6 +542,10 @@ ul[id="primary-menu"] .menu-item .sub-menu {
     margin-left: auto;
 }
 
+.single-event article h1 {
+	color:#000;
+} 
+
 .single main + aside {
     flex:1 0 320px;
     padding:100px 0 30px 20px;
@@ -590,7 +625,9 @@ ol.tribe-list-widget h4 {
     display: flex;
     align-content: center;
     align-items: center;
-    height: 500px;
+    min-height: 500px;
+	background-repeat:no-repeat;
+	background-size:cover;
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
@@ -605,6 +642,12 @@ ol.tribe-list-widget h4 {
     padding:10px 10px 5px;
     font-size: 1.6rem;
     text-transform: uppercase;
+}
+
+[id="success-story-area"] h3,
+[id="success-story-area"] p {
+    background:rgba(0,0,0,.35);
+    padding:10px;
 }
 
 [id="success-story-area"] h3 {
@@ -689,6 +732,10 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
     justify-content: space-between;
 }
 
+footer .social-list ul.inline-list {
+	padding:0;
+}
+
 /*** FOOTER MENU ***/
 .footer-menu.widget-area {
     flex:0 0 250px;
@@ -718,6 +765,10 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
     font-size: 1.5rem;
     font-weight: normal;
 }
+
+.footer-menu.widget-area li .sub-menu li .sub-menu {
+	margin-left:20px;
+} 
 
 /*** PARTNER LIST ***/
 .partners-list {

@@ -61,7 +61,7 @@ if ( $the_query->have_posts() ) {
                 <h2><span>Success story</span></h2>
                 <a class="post-preview" href="<?php the_permalink(); ?>">   
                     <h3><?php the_title(); ?></h3>
-                    <p><?php the_excerpt();?></p>
+                    <?php the_excerpt();?>
 
                     
                 </a>

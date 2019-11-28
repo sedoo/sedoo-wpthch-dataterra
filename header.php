@@ -21,15 +21,37 @@
     
     <?php 
     wp_head(); 
-    $page_id = get_queried_object_id();
-    // $cover = get_the_post_thumbnail_url($page_id, 'cover');
-    if (get_the_post_thumbnail_url($page_id, 'cover')) {
-        $cover = get_the_post_thumbnail_url($page_id, 'cover');
+    $query_object = get_queried_object();
+    // echo $query_object->post_type;
+    // var_dump($query_object);
+
+    // IF SINGLE
+    if ($query_object->post_type) {
+        $page_id = get_queried_object_id();
+    }
+    if (get_the_post_thumbnail_url(get_queried_object_id(), 'cover')) {
+        $cover = get_the_post_thumbnail_url(get_queried_object_id(), 'cover');
     } else {
         $cover = get_header_image();
     }
-    $title = get_the_title($page_id);
+
+    // IF TERM TAX ARCHIVE
+    if ($query_object->term_id) {
+        $title= $query_object->name;
+        if (get_field( 'tax_image', $query_object)) {
+            $coverfield = get_field( 'tax_image', $query_object);
+            $cover=$coverfield['url'];
+        } else {
+            $cover = get_header_image();
+        }
+        
+    } else {
+        $title = get_the_title($page_id);
+    }
     
+    $logo= get_custom_logo();
+    // var_dump($logo);
+
     ?>
 </head>
 
