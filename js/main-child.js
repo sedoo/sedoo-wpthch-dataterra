@@ -159,5 +159,47 @@ jQuery(document).ready(function ($) {
         $(this).html(link);
     });
     
+/***
+ * ANIMATION ON SCHEMA
+ * 
+ */
+
+    $('ul.homeListPole li:nth-child(1)').hover(
+        function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-45-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            'animation' : 'rotate-45-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }, function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-45-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'animation' : 'rotate-45-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }
+    );
+    $('ul.homeListPole li:nth-child(2)').hover(
+        function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-135-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            'animation' : 'rotate-135-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }, function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-135-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'animation' : 'rotate-135-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }
+    );
+    $('ul.homeListPole li:nth-child(3)').hover(
+        function(){
+            $('.homeSchema').css({'-webkit-animation' : 'rotate-r45-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            'animation' : 'rotate-r45-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }, function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-r45-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'animation' : 'rotate-r45-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }
+    );
+    $('ul.homeListPole li:nth-child(4)').hover(
+        function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-r135-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            'animation' : 'rotate-r135-cw 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }, function(){
+        $('.homeSchema').css({'-webkit-animation' : 'rotate-r135-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'animation' : 'rotate-r135-reset 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'});
+        }
+    );
+
 });
 

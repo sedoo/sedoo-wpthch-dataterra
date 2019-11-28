@@ -31,16 +31,16 @@
             
         </figure>
         <?php
-        if (!is_front_page()) {
+        //if (!is_front_page()) {
         ?>
         <p>
-        <?php     $categories = get_the_category();
+        <?php $categories = get_the_category();
             if ( ! empty( $categories ) ) {
             echo esc_html( $categories[0]->name );   
         }; ?>
         </p>
         <?php
-        }
+        //}
         ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
@@ -54,7 +54,7 @@
                 ?>
                 <p><?php the_date('M / d / Y') ?></p>
             <?php endif; ?>
-            <a href="<?php the_permalink(); ?>"><?php echo __('See more', 'sedoo-wpth-labs'); ?> →</a>
+            <a href="<?php the_permalink(); ?>"><?php echo __('Lire plus', 'sedoo-wpth-labs'); ?> →</a>
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-->

@@ -102,7 +102,7 @@ acf_add_local_field_group(array(
 			'label' => 'Categories',
 			'name' => 'sedoo-block-post-list-categories',
 			'type' => 'taxonomy',
-			'instructions' => '',
+			'instructions' => '<strong>If empty, all categories are selected !</strong>',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -112,7 +112,7 @@ acf_add_local_field_group(array(
 			),
 			'taxonomy' => 'category',
 			'field_type' => 'radio',
-			'allow_null' => 0,
+			'allow_null' => 1,
 			'add_term' => 0,
 			'save_terms' => 0,
 			'load_terms' => 0,
@@ -186,6 +186,44 @@ acf_add_local_field_group(array(
 			'max' => 9,
 			'step' => '',
 		),
+		array(
+			'key' => 'field_5ddfed8767c61',
+			'label' => '"More articles" button label',
+			'name' => 'sedoo-block-post-list-showmore-button-label',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5dd6a71dc219d',
+			'label' => 'Show "More articles" button',
+			'name' => 'sedoo-block-post-list-showmore-button',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
 	),
 	'location' => array(
 		array(
@@ -205,6 +243,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+
 
 acf_add_local_field_group(array(
 	'key' => 'group_5ddee2d993490',
