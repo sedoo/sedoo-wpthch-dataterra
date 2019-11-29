@@ -45,6 +45,8 @@
             $cover = get_header_image();
         }
         
+    } elseif ($query_object->name) {
+        $title = $query_object->label;
     } else {
         $title = get_the_title($page_id);
     }
