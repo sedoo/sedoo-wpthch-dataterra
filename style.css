@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.7.2
+Version:      0.7.3
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -30,9 +30,9 @@ OVERRIDE CSS
     --main-color:#1eae9c;
     --second-color:#1e1f4f;
     --aeris-color:#3DB5E5;
-    --formater-color:#B8412C;
+    --formater-color:#F27B34;
     --ocean-color:#2669A1;
-    --theia-color:#F27B34;
+    --theia-color:#B8412C;
 }
 
 nav[id="primary-navigation"] ul li a {
@@ -40,7 +40,9 @@ nav[id="primary-navigation"] ul li a {
 }
 
 body,
-nav[id="primary-navigation"] ul li a {
+nav[id="primary-navigation"] ul li a,
+.post .entry-header p, 
+.post-horizontal .entry-header p {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -231,11 +233,32 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 /*** HEADER ***/
 
 header[id="masthead"] {
-    position: static;
+    position: relative;
     background-position: center;
     background-color:transparent;
     background-size: cover;
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+header[id="masthead"]::before {
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:-1;
+    background: -moz-linear-gradient(top,  rgba(86,86,86,0.68) 0%, rgba(70,70,70,0.04) 47%, rgba(51,51,51,0) 99%, rgba(51,51,51,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(86,86,86,0.68) 0%,rgba(70,70,70,0.04) 47%,rgba(51,51,51,0) 99%,rgba(51,51,51,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(86,86,86,0.68) 0%,rgba(70,70,70,0.04) 47%,rgba(51,51,51,0) 99%,rgba(51,51,51,0) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad565656', endColorstr='#00333333',GradientType=0 ); /* IE6-9 */
+}
+    
+header[id="masthead"] .wrapper {
+    z-index:0;
+}
+header[id="masthead"] .nav-container {
+    z-index:1;
 }
 
 h1.site-title,
@@ -297,7 +320,7 @@ header#cover {
     text-transform: uppercase;
 }
 .home header[id="masthead"] .wrapper .header-title p {
-    width: 50%;
+    width: 51%;
     padding:20px;
     margin:30px auto;
     font-size:1.5rem;
@@ -642,7 +665,7 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 }
 
 .post:nth-child(8n) .entry-header p {
-    left: 10px;
+    left: -10px;
     right: inherit;
 }
 
@@ -650,6 +673,7 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 .content-list .post:nth-child(4n) {
     height: auto;
     flex-flow: row wrap;
+    align-content: flex-start;
 }
 
 .post-wrapper .post:nth-child(4n)::before,
@@ -663,7 +687,7 @@ ul[id="primary-menu"] .menu-item .sub-menu {
     height: 235px;
     margin-right: 0;
     margin-left:0;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 
 .post-wrapper .post:nth-child(4n) .entry-header,
@@ -672,7 +696,7 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 .content-list .post:nth-child(4n) .group-content,
 .content-list .post:nth-child(8n) .group-content {
     width: 100%;
-    position: static;
+    position: relative;
 }
 
 .post:nth-child(8n) .entry-content > h2,
@@ -1049,7 +1073,7 @@ footer .intranet li a:hover img {
 }
 
 /*** ATMOSPHERE ***/
-.category-atmosphere .entry-header p {
+article.category-atmosphere header.entry-header p {
 	background:var(--aeris-color);
 }
 .post-wrapper .post.category-atmosphere {
@@ -1057,14 +1081,14 @@ footer .intranet li a:hover img {
 }
 
 /*** OCEAN ***/
-.category-ocean .entry-header p {
+article.category-ocean header.entry-header p {
 	background:var(--ocean-color);
 }
 .post-wrapper .post.category-ocean {
 		border-color:var(--ocean-color);
 }
 /*** SURFACES CONTINENTALES ***/
-.category-surfaces-continentales .entry-header p {
+article.category-surfaces-continentales header.entry-header p {
 	background:var(--theia-color);
 }
 .post-wrapper .post.category-surfaces-continentales {
@@ -1072,7 +1096,7 @@ footer .intranet li a:hover img {
 }
 
 /*** TERRE SOLIDE ***/
-.category-terre-solide .entry-header p {
+article.category-terre-solide header.entry-header p {
 	background:var(--formater-color);
 }
 .post-wrapper .post.category-terre-solide {
@@ -1081,7 +1105,6 @@ footer .intranet li a:hover img {
 
 /*** GLOBAL ***/
 .post-wrapper .post {
-	border-color:#1eae9c;
+	border-color:var(--main-color);
 }
-
 
