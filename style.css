@@ -651,7 +651,8 @@ ul[id="primary-menu"] .menu-item .sub-menu {
     justify-content: space-between;
 }
 
-.post-wrapper .post {
+.post-wrapper .post,
+.post-wrapper .success-story {
     width: auto;
     flex:1 0 330px;
     padding: 20px;
