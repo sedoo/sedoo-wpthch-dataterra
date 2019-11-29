@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.7.3
+Version:      0.8.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -30,9 +30,9 @@ OVERRIDE CSS
     --main-color:#1eae9c;
     --second-color:#1e1f4f;
     --aeris-color:#3DB5E5;
-    --formater-color:#F27B34;
+    --formater-color:#B8412C;
     --ocean-color:#2669A1;
-    --theia-color:#B8412C;
+    --theia-color:#F27B34;
 }
 
 nav[id="primary-navigation"] ul li a {
