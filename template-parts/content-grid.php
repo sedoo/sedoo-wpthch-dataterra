@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
     <a href="<?php the_permalink(); ?>"></a>
 	<header class="entry-header">
         <figure>

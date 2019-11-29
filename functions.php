@@ -110,7 +110,9 @@ function sedoo_wpthch_dataterra_postlist_by_term($title, $term, $layout, $limit,
         ?>	
     </section>
     <?php if ($button == 1) { ?>    
-        <a href="<?php echo $url; ?>" class="btn"><?php echo $buttonLabel; ?></a>
+        <div class="wp-block-button aligncenter">
+            <a href="<?php echo $url; ?>" class="wp-block-button__link btn"><?php echo $buttonLabel; ?></a>
+        </div>
     <?php
         }
     ?>
