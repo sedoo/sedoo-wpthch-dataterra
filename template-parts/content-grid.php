@@ -30,31 +30,26 @@
             }?>
             
         </figure>
-        <?php
-        //if (!is_front_page()) {
-        ?>
         <p>
         <?php $categories = get_the_category();
             if ( ! empty( $categories ) ) {
             echo esc_html( $categories[0]->name );   
         }; ?>
         </p>
-        <?php
-        //}
-        ?>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
             <h2><?php the_title(); ?></h2>
-            <?php the_excerpt(); ?>
+            <?php //the_excerpt(); ?>
         </div><!-- .entry-content -->
         <footer class="entry-footer">
             <?php
             if ( 'post' === get_post_type() ) :
                 ?>
-                <p><?php the_date('M / d / Y') ?></p>
+                <p><?php the_date('d.m.Y') ?></p>
             <?php endif; ?>
-            <a href="<?php the_permalink(); ?>"><?php echo __('Lire plus', 'sedoo-wpth-labs'); ?> →</a>
+            <!--
+            <a href="<?php //the_permalink(); ?>"><?php //echo __('Lire plus', 'sedoo-wpth-labs'); ?> →</a>-->
         </footer><!-- .entry-footer -->
     </div>
 </article><!-- #post-->

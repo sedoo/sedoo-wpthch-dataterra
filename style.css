@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.8.1
+Version:      0.9.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -33,6 +33,10 @@ OVERRIDE CSS
     --formater-color:#B8412C;
     --ocean-color:#2669A1;
     --theia-color:#F27B34;
+}
+
+body {
+    letter-spacing: 1px;
 }
 
 nav[id="primary-navigation"] ul li a {
@@ -96,6 +100,11 @@ h3 {
 }
 .wrapper-layout p + a + h3 {
 	margin-top:20px;
+}
+
+.post .group-content .entry-content h2, .post .group-content .entry-content h3, .post-horizontal .group-content .entry-content h2, .post-horizontal .group-content .entry-content h3 {
+    font-family: Next;
+    line-height: 1.2;
 }
 
 article ul, 
@@ -191,8 +200,12 @@ blockquote {
     color:#000;
 }
 
+.wrapper-content h2, .wrapper-layout h2 {
+    margin-top: 30px;
+}
+
 header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
-    width: 230px;
+    max-width: 230px;
 }
 
 /*** ALIGNEMENT **/
@@ -396,7 +409,7 @@ header#cover {
 }
 
 .home h2 {
-    font-size:3.5rem;
+    font-size:3.2rem;
 }
 
 /*** SCHEMA  ***/
@@ -669,13 +682,15 @@ ul[id="primary-menu"] .menu-item .sub-menu {
     width: auto;
     flex:1 0 330px;
     padding: 20px;
-    -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    /* -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5); */
+    box-shadow: none;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
     background:#fff;
-    border-top: 4px solid var(--main-color);
+    /* border-top: 4px solid var(--main-color); */
+    border-top:none;
 }
 
 .post:nth-child(8n) .entry-header p {
@@ -749,6 +764,15 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 .post-wrapper .post .entry-header > figure {
     margin:0;
 }
+
+.post .entry-header {
+    align-items: flex-start;
+}
+
+.post .entry-header p {
+    position:static;
+}
+
 .content-list h2 {
     font-family: "Montserrat", sans-serif;
     font-size:2rem;
@@ -773,7 +797,13 @@ ul[id="primary-menu"] .menu-item .sub-menu {
 }
 
 .post .group-content .entry-content {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.post .group-content .entry-footer p, .post-horizontal .group-content .entry-footer p {
+    font-size: 1.8rem;
+    margin: 0;
+    color:#999;
 }
 
 /****************   SINGLE   ***************/
@@ -1068,6 +1098,20 @@ footer .intranet li a:hover img {
 
 .copyright .wrapper.site-info .intranet {
     margin-top:0;
+}
+
+/*****  STICKY MENU TOC **/
+aside[id="stickyMenu"] {
+    width: 17%;
+    min-width: 200px;
+    background:rgba(255,255,255,.9);
+}
+aside[id="stickyMenu"] > div [id="tocList"] li a {
+    font-size:1.5rem;
+    display:block;
+	font-family: 'Open Sans';
+	padding: 10px 0 5px;
+	
 }
 
 /*** BUTTON **/
