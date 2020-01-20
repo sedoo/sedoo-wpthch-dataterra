@@ -51,5 +51,7 @@
             <!--
             <a href="<?php //the_permalink(); ?>"><?php //echo __('Lire plus', 'sedoo-wpth-labs'); ?> →</a>-->
         </footer><!-- .entry-footer -->
+        
     </div>
+    </a>
 </article><!-- #post-->

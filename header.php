@@ -22,8 +22,9 @@
     <?php 
     wp_head(); 
     $query_object = get_queried_object();
+
     // echo $query_object->post_type;
-    // var_dump($query_object);
+    //  var_dump($query_object);
 
     // IF SINGLE
     if ($query_object->post_type) {
@@ -61,7 +62,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'labs-by-sedoo' ); ?></a>
 
-<header id="masthead" class="site-header " style="background-image:url(<?php if (!is_front_page()) { echo $cover; } else { header_image(); }?>);">
+<header id="masthead" class="site-header <?php if (!is_front_page()) { echo "wrapper"; } if (is_page_template("template-pole.php")) { echo "cover-pole"; }?>" style="background-image:url(<?php if (is_page_template("template-pole.php")) { echo $cover; } if (is_front_page()) { header_image(); }?>);">
      <div class="wrapper">
             <div class="site-branding">
                 <?php the_custom_logo(); ?>
@@ -137,7 +138,7 @@
                 ?>
             </div>
             
-            <div class="wrapper header-title">
+            <div class="wrapper header-title" style="background-image:url(<?php if (!is_page_template("template-pole.php") && !is_front_page()) { echo $cover; }?>);">
             <?php if (is_front_page()) {
             ?>
                 <h1 class="site-title screen-reader-text"><?php bloginfo( 'name' ); ?></h1>

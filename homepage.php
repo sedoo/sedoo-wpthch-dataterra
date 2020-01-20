@@ -16,15 +16,6 @@ get_header();
         <?php endwhile; endif; ?>
 
     </main><!-- #main -->
-
-    <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
-    <aside id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-        <?php dynamic_sidebar( 'home_right_1' ); ?>
-
-
-    </aside><!-- #primary-sidebar -->
-    <?php endif; ?>
-
 </div><!-- #primary -->
 
 <?php
@@ -61,9 +52,7 @@ if ( $the_query->have_posts() ) {
                 <h2><span>Success story</span></h2>
                 <a class="post-preview" href="<?php the_permalink(); ?>">   
                     <h3><?php the_title(); ?></h3>
-                    <?php the_excerpt();?>
-
-                    
+                    <?php the_excerpt();?>                    
                 </a>
             </div>
         </section>
