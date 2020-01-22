@@ -62,13 +62,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'labs-by-sedoo' ); ?></a>
 
-<header id="masthead" class="site-header <?php if (!is_front_page()) { echo "wrapper"; } if (is_page_template("template-pole.php")) { echo "cover-pole"; }?>" style="background-image:url(<?php if (is_page_template("template-pole.php")) { echo $cover; } if (is_front_page()) { header_image(); }?>);">
+<header id="masthead" class="site-header<?php if (!is_front_page()) { echo " wrapper"; } if (is_page_template("template-pole.php")) { echo " cover-pole"; }?>" style="background-image:url(<?php if (is_page_template("template-pole.php")) { echo $cover; } if (is_front_page()) { header_image(); }?>);">
      <div class="wrapper">
+        <div id="headerTop">
             <div class="site-branding">
                 <?php the_custom_logo(); ?>
             </div><!-- .site-branding -->
             <div class="nav-container">
-                <?php if(wp_is_mobile()): ?>
+                <?php if(wp_is_mobile()) { ?>
                 <nav id="primary-navigation" class="main-navigation">
                     <?php 
                     if (has_nav_menu('burger-menu')){
@@ -92,7 +93,7 @@
                         <label for="burger"><?php echo __('Menu', 'sedoo-wpth-labs'); ?></label>
                     </button>
                 </nav>
-                <?php else : ?>
+                <?php } else { ?>
                 <?php if (has_nav_menu('primary-menu')) { ?>
                 <nav id="primary-navigation" class="main-navigation">
                     <?php
@@ -134,11 +135,12 @@
 -->
                 <?php 
                     }
-                   endif;
+                }
                 ?>
-            </div>
             
-            <div class="wrapper header-title" style="background-image:url(<?php if (!is_page_template("template-pole.php") && !is_front_page()) { echo $cover; }?>);">
+            </div>
+        </div>
+        <div class="wrapper header-title" style="background-image:url(<?php if (!is_page_template("template-pole.php") && !is_front_page()) { echo $cover; }?>);">
             <?php if (is_front_page()) {
             ?>
                 <h1 class="site-title screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
@@ -154,7 +156,7 @@
 
                 <div id="home-button">
 
-                <?php if (get_field('dataterra_home_link1', $page_id)) {
+                    <?php if (get_field('dataterra_home_link1', $page_id)) {
                     $link = get_field('dataterra_home_link1', $page_id);
                     $link_url = $link['url'];
                     $link_title = $link['title'];
@@ -163,9 +165,9 @@
                     <div>
                         <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                     </div>
-                <?php } ?>
+                    <?php } ?>
 
-                <?php if (get_field('dataterra_home_link2', $page_id)) { 
+                    <?php if (get_field('dataterra_home_link2', $page_id)) { 
                     $link = get_field('dataterra_home_link2', $page_id);
                     $link_url = $link['url'];
                     $link_title = $link['title'];
@@ -174,7 +176,7 @@
                     <div>
                         <a class="homelink2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                     </div>
-                <?php } ?>
+                    <?php } ?>
 
                 </div>                
             <?php } else { ?>
