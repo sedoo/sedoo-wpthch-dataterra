@@ -22,4 +22,26 @@ if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'sedoo_wpthch_dataterra_register_acf_block_types');
 }
 
+/** 
+ * ACF OPTIONS PAGES 
+ */
+function sedoo_wpthch_dataterra_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Data Terra General Settings'),
+            'menu_title'    => __('DT Theme Settings'),
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    }
+}
+if( function_exists('acf_add_options_page') ) {
+    add_action('acf/init', 'sedoo_wpthch_dataterra_acf_op_init');
+}
+
 ?>

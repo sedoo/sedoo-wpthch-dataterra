@@ -347,6 +347,7 @@ header#cover {
     height: 100vh;
 }
 
+
 .home #primary {
     display:flex;
     flex-flow: row wrap;

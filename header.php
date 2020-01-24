@@ -55,6 +55,12 @@
     $logo= get_custom_logo();
     // var_dump($logo);
 
+    if ((is_front_page()) || (is_page_template("template-pole.php"))) {
+        $logo= get_field('dataterra_logo_white', 'option');
+    } else {
+        $logo= get_field('dataterra_logo_color', 'option');
+    }
+    $homeURL = get_home_url();
     ?>
 </head>
 
@@ -66,7 +72,13 @@
      <div class="wrapper">
         <div id="headerTop">
             <div class="site-branding">
-                <?php the_custom_logo(); ?>
+                <?php //the_custom_logo(); 
+                if( !empty( $logo ) ): ?>
+                <a href="<?php echo $homeURL;?>">
+                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+                </a>
+                <?php endif; ?>
+                
             </div><!-- .site-branding -->
             <div class="nav-container">
                 <?php if(wp_is_mobile()) { ?>

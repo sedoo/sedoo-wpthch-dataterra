@@ -118,7 +118,7 @@ $themeSlugRewrite = "category";
             ?>     
             </div>
         </footer>
-        <?php get_template_part('template-parts/nav-box'); ?>
+        <?php //get_template_part('template-parts/nav-box'); ?>
 	</div><!-- #primary -->
 <?php
 endwhile; // End of the loop.
