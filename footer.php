@@ -16,7 +16,7 @@ $options_list_footer = get_field('list_choice', 'option');
 
 	<footer id="colophon" class="site-footer">
         <div class="wrapper-layout">
-            <div>
+            <div><!--footer menus-->
                 <?php if ( is_active_sidebar( 'footer_menu_1' ) ) : ?>
                 <div class="footer-menu widget-area" id="footer_menu_1" role="complementary">
                     <?php dynamic_sidebar( 'footer_menu_1' ); ?>
@@ -92,7 +92,7 @@ $options_list_footer = get_field('list_choice', 'option');
         <?php endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-<?php get_template_part( 'template-parts/shortcut', 'page' ); ?>
+
 <?php wp_footer(); ?>   
 <!--
 <script>

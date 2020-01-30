@@ -17,7 +17,7 @@ $cover = get_field( 'tax_image', $term);
 
 ?>
 
-	<div id="content-area" class="wrapper archives">
+	<div id="content-area" class="wrapper wrapper-1240 archives">
 		<main id="main" class="site-main">	
 		<?php
 			if (get_the_archive_description()) {

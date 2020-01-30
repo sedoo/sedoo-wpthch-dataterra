@@ -35,34 +35,7 @@ get_header();
                 ?>
             </div>
 		</main><!-- #main -->
-        <?php // table_content ( value )
-        if (get_field( 'table_content' )):
-        ?>
-        <aside id="stickyMenu" 
-               <?php if(wp_is_mobile()){ ?> 
-                    class="" 
-               <?php } else { ?> 
-                    class="open" 
-               <?php } ?>>
-            <div>
-                <div>
-                    <p><?php echo __('Sommaire', 'sedoo-wpth-labs'); ?></p>
-                    <nav role="sommaire">
-                        <ol id="tocList">
 
-                        </ol>
-                    </nav>
-                </div>
-                <button class="bobinette">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
-                            <rect fill="none" width="30" height="30"/>
-                            <polyline points="
-                            10.71,2.41 23.29,15 10.71,27.59 	"/>
-                    </svg> 
-                </button>
-            </div>
-        </aside>
-        <?php endif; ?>
 	</div><!-- #primary -->
 <?php
 
