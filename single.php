@@ -55,13 +55,14 @@ $themeSlugRewrite = "category";
             get_sidebar();
             ?>
         </div>
-        <footer class="read-more-article">
-            <div>
+        <footer class="wrapper single-footer">
             <?php
+            // sedoo_wpthch_dataterra_postlist_by_term('Plus d\'actualités', );
+
             $args = array(
                 'post_type'             => 'post',
                 'post_status'           => array( 'publish' ),
-                'posts_per_page'        => '2',           
+                'posts_per_page'        => '3',           
                 'post__not_in'          => array(get_the_ID()), 
                 'orderby'               => 'date',
                 'order'                 => 'DESC',
@@ -73,42 +74,27 @@ $themeSlugRewrite = "category";
                     ),
                 ),
             );
-            $the_query = new WP_Query( $args );
 
-            if ( $the_query->have_posts() ) {  
+            $postsList = get_posts ($args);
+    
+            if ($postsList){       
             ?>
-                <h2><?php echo __("Autres actualités en relation", 'sedoo-wpth-labs'); ?> :</h2>
-                <div class="post-loop">
-                <?php                
-                    while ( $the_query->have_posts() ) {
-                        $the_query->the_post();
+            <h2><?php echo __('Plus d\'actualités', 'sedoo-wpth-labs') ?></h2>
+            <section role="listNews" class="post-wrapper">
+                
+                <?php
 
-                        ?>
-                        <a class="post-preview" href="<?php the_permalink(); ?>">   
-                            <div>
-                                <h3><?php the_title(); ?></h3>
-                            </div>
-                            <div class="post-img">
-                                <?php if (get_the_post_thumbnail()) {
-                                    the_post_thumbnail();
-                                } else {
-                                    if (catch_that_image() ==  "no_image" ){
-                                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-                                        <img class="object-fit-contain" src="<?php echo $image[0]; ?>" alt="" />
-                                    <?php } else {
-                                        echo '<img src="';
-                                        echo catch_that_image();
-                                        echo '" alt="" />'; 
-                                    }
-                                }
-                                ?>
-                            </div>
-                        </a>
+                foreach ($postsList as $post) :
+                setup_postdata( $post );
+                    ?>
                     <?php
-                    }
-                ?>            
-               </div>
+                    get_template_part( 'template-parts/content', 'grid' );
+                    ?>
+                    <?php
+                endforeach;
+                ?>	
+            </section>
+
             <?php
             } else {
                 // no posts found
@@ -116,7 +102,6 @@ $themeSlugRewrite = "category";
             /* Restore original Post Data */
             wp_reset_postdata();
             ?>     
-            </div>
         </footer>
         <?php //get_template_part('template-parts/nav-box'); ?>
 	</div><!-- #primary -->

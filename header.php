@@ -65,11 +65,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'labs-by-sedoo' ); ?></a>
-
-<header id="masthead" class="site-header<?php if (!is_front_page()) { echo " wrapper"; } if (is_page_template("template-pole.php")) { echo " cover-pole"; }?>" style="background-image:url(<?php if (is_page_template("template-pole.php")) { echo $cover; } if (is_front_page()) { header_image(); }?>);">
-     <div class="wrapper">
+    
+<header id="masthead" class="site-header<?php if ((!is_front_page()) && (!is_page_template("template-pole.php"))) { echo " wrapper"; } if (is_page_template("template-pole.php")) { echo " cover-pole"; }?>" style="background-image:url(<?php if (is_page_template("template-pole.php")) { echo $cover; } if (is_front_page()) { header_image(); }?>);">
+<?php if (is_front_page()) {
+        get_template_part( 'template-parts/shortcut', 'page' ); 
+        }
+        ?> 
+    <div class="wrapper">
         <div id="headerTop">
             <div class="site-branding">
                 <?php //the_custom_logo(); 
@@ -120,7 +125,7 @@
                             <span></span>
                             <span></span>
                         </div>
-                        <label for="burger"><?php echo __('Menu', 'sedoo-wpth-labs'); ?></label>
+                        <label for="burger" class="screen-reader-text"><?php echo __('Menu', 'sedoo-wpth-labs'); ?></label>
                     </button>
                 </nav>
                 <?php } ?>
@@ -152,56 +157,24 @@
             
             </div>
         </div>
-        <div class="wrapper header-title" style="background-image:url(<?php if (!is_page_template("template-pole.php") && !is_front_page()) { echo $cover; }?>);">
+        <div class="wrapper wrapper-1240 header-title" style="background-image:url(<?php if (!is_page_template("template-pole.php") && !is_front_page()) { echo $cover; }?>);">
             <?php if (is_front_page()) {
             ?>
-                <h1 class="site-title screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
-                <?php
-                // $description = ;
-                if ( !empty(get_bloginfo( 'description' )) ) { ?>
-                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                <?php } ?>
+            <h1 class="site-title screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
+            <?php
+            // $description = ;
+            if ( !empty(get_bloginfo( 'description' )) ) { ?>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php } ?>
 
-                <?php if (get_field('dataterra_home_description', $page_id)) { ?>
-                    <p><?php the_field('dataterra_home_description', $page_id);?></p>
-                <?php } ?>
+            <?php if (get_field('dataterra_home_description', $page_id)) { ?>
+                <p><?php the_field('dataterra_home_description', $page_id);?></p>
+            <?php } ?>
 
-                <div id="home-button">
+            <div id="home-button">
 
-                    <?php if (get_field('dataterra_home_link1', $page_id)) {
-                    $link = get_field('dataterra_home_link1', $page_id);
-                    $link_url = $link['url'];
-                    $link_title = $link['title'];
-                    $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <div>
-                        <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                    </div>
-                    <?php } ?>
-
-                    <?php if (get_field('dataterra_home_link2', $page_id)) { 
-                    $link = get_field('dataterra_home_link2', $page_id);
-                    $link_url = $link['url'];
-                    $link_title = $link['title'];
-                    $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <div>
-                        <a class="homelink2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                    </div>
-                    <?php } ?>
-
-                </div>                
-            <?php } else { ?>
-                <h1 class="site-title"><?php echo $title; ?>  
-
-                <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
-                    <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
-                <?php } ?>
-
-                </h1>
-
-                <?php if (get_field('dataterra_pole_link', $page_id)) { 
-                $link = get_field('dataterra_pole_link', $page_id);
+                <?php if (get_field('dataterra_home_link1', $page_id)) {
+                $link = get_field('dataterra_home_link1', $page_id);
                 $link_url = $link['url'];
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
@@ -209,14 +182,60 @@
                 <div>
                     <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                 </div>
-                <?php } ?>            
+                <?php } ?>
 
+                <?php if (get_field('dataterra_home_link2', $page_id)) { 
+                $link = get_field('dataterra_home_link2', $page_id);
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                <div>
+                    <a class="homelink2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                </div>
+                <?php } ?>
+            </div>        
+                    
+        <?php } else { ?>
+            <h1 class="site-title"><?php echo $title; ?>  
+
+            <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
+                <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
             <?php } ?>
+
+            </h1>
+
+            <?php if (get_field('dataterra_pole_link', $page_id)) { 
+            $link = get_field('dataterra_pole_link', $page_id);
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <div>
+                <a class="homelink1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
             </div>
-            
+            <?php } ?>            
+
+        <?php } ?>
+        </div>
+        <?php
+        if (is_front_page()) {
+        ?>
+        <div id="goDownLinkArea">
+        <a class="goDownLink" href="#content" title="A propos">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="goDown" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 25 25" xml:space="preserve">
+                <path d="M20.48,10.58c0.24-0.24,0.619-0.24,0.84,0c0.119,0.121,0.18,0.26,0.18,0.42s-0.061,0.301-0.18,0.42l-8.4,8.4  c-0.239,0.24-0.62,0.24-0.84,0l-8.399-8.4c-0.24-0.24-0.24-0.619,0-0.84c0.239-0.24,0.619-0.24,0.84,0l7.979,7.98L20.48,10.58z   M12.5,12.16L4.521,4.18c-0.24-0.24-0.62-0.24-0.84,0c-0.24,0.24-0.24,0.62,0,0.839l8.399,8.4c0.24,0.24,0.62,0.24,0.84,0l8.4-8.4  C21.439,4.901,21.5,4.741,21.5,4.6c0-0.14-0.061-0.3-0.18-0.42c-0.24-0.24-0.62-0.24-0.84,0L12.5,12.16z"></path>
+            </svg>
+            <span class="screen-reader-text">Aller au contenu / Go to content</span>
+        
+        </a>  
+        </div>
+        <?php 
+        } ?>
 
 
         </div>
-	</header><!-- #masthead -->
+        
+</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

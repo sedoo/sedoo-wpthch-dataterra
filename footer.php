@@ -92,7 +92,7 @@ $options_list_footer = get_field('list_choice', 'option');
         <?php endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-<?php get_template_part( 'template-parts/shortcut', 'page' ); ?>
+
 <?php wp_footer(); ?>   
 <!--
 <script>

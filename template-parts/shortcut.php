@@ -78,7 +78,7 @@ $options_theme = get_field('ajout_options', 'option');
                     <rect fill="none" width="30" height="30" class="size"/>
                 </g>
             </svg>
-            <?php echo __('Search', 'sedoo-wpth-labs'); ?>
+            <?php //echo __('Search', 'sedoo-wpth-labs'); ?>
         </button>
     </li>
     
