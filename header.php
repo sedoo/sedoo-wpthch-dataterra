@@ -22,7 +22,7 @@
     <?php 
     wp_head(); 
     $query_object = get_queried_object();
-
+    $currentPostType = $query_object->post_type;
     // echo $query_object->post_type;
     //  var_dump($query_object);
 
@@ -196,14 +196,19 @@
                 <?php } ?>
             </div>        
                     
-        <?php } else { ?>
-            <h1 class="site-title"><?php echo $title; ?>  
+        <?php } 
+        else { 
+            if ($currentPostType !== "post") {
+            ?>
+            <h1 class="site-title"><?php echo $title."/".$currentPostType;  ?>  
 
             <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
                 <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
             <?php } ?>
-
             </h1>
+            <?php
+            }
+            ?>
 
             <?php if (get_field('dataterra_pole_link', $page_id)) { 
             $link = get_field('dataterra_pole_link', $page_id);
