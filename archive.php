@@ -58,7 +58,7 @@ $cover = get_field( 'tax_image', $term);
 
 			// get_template_part( 'template-parts/content', 'none' );
 			?>
-			<p>No opportunities are currently available.</p>
+			<p>No result found.</p>
 			<?php
 
 		endif;

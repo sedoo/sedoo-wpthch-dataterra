@@ -200,7 +200,7 @@
         else { 
             if ($currentPostType !== "post") {
             ?>
-            <h1 class="site-title"><?php echo $title."/".$currentPostType;  ?>  
+            <h1 class="site-title"><?php echo $title;?>  
 
             <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
                 <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
