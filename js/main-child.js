@@ -70,21 +70,6 @@ jQuery(document).ready(function ($) {
     $(".bobinette").click(function () {
         $("#stickyMenu").toggleClass("open");
     });
-    // reading time
-    $(function() {
-
-        $('article').each(function() {
-
-            let _this = $(this);
-
-            _this.readingTime({
-                readingTimeTarget: '.eta',
-                remoteTarget: 'article',
-                success: function(data) {
-                }
-            });
-        });
-    });
     
     // Permettre au slider menu de fonctionner avec le scroll
 //    const slider = $("#burger-menu");
