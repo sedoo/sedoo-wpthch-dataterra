@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.9.3
+Version:      0.9.4
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -227,6 +227,7 @@ blockquote {
 
 header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
     max-width: 230px;
+    z-index: 1;
 }
 
 /*** ALIGNEMENT **/
@@ -276,6 +277,24 @@ header[id="masthead"],
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
+.home header[id="masthead"]::before,
+header[id="masthead"] .wrapper .header-title::before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    margin-left:-20px;
+    margin-top:-20px;
+}
+.home header[id="masthead"]::before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 50%),
+                linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 15%);
+}
+
+header[id="masthead"] .wrapper .header-title::before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 51%);  
+}
+
 [id="headerTop"] {
     width: 100%;
     display: flex;
@@ -297,6 +316,7 @@ h2.site-description,
 .home header[id="masthead"] .wrapper .header-title p {
     /* background:rgba(0,0,0,.2); */
     padding:10px 20px 0;
+    z-index: 1;
 }
 
 header[id="masthead"] > .wrapper {
@@ -315,12 +335,14 @@ header[id="masthead"] .wrapper .header-title {
     height: 375px;
 }
 
+
 .page-template-template-pole header[id="masthead"] .wrapper .header-title {
     height: 438px;
 }
 
 header[id="masthead"] .wrapper .header-title h1 {
     text-align: center;
+    z-index:1;
 }
 
 header[id="masthead"] .wrapper .header-title small{
@@ -388,6 +410,7 @@ header#cover {
     margin:30px auto;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 [class^="homelink"] {
@@ -444,6 +467,7 @@ header#cover {
 
 .home #goDownLinkArea {
     width: 100%;
+    z-index: 1;
 }
 
 .home .goDownLink {
@@ -453,7 +477,7 @@ header#cover {
 }
 .home #goDown {
 
-    fill:#DDD;
+    fill:#FFF;
     transform: scale(3);
     transition: all .4s ease-in-out;
 }
@@ -979,27 +1003,27 @@ ol.tribe-list-widget h4 {
 }
 
 #shortcuts .social-link a[href*="twitter"] {
-    background: url("image/logo_twitter.svg") no-repeat;
+    background: url("images/logo_twitter.svg") no-repeat;
 }
 
 #shortcuts .social-link a[href*="facebook"] {
-    background: url("image/logo_facebook.svg") no-repeat;
+    background: url("images/logo_facebook.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="youtube"] {
-    background: url("image/logo_youtube.svg") no-repeat;
+    background: url("images/logo_youtube.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="linkedin"] {
-    background: url("image/logo_linkedin.svg") no-repeat;
+    background: url("images/logo_linkedin.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="instagram"] {
-    background: url("image/logo_instagram.svg") no-repeat;
+    background: url("images/logo_instagram.svg") no-repeat;
 }
 
 /**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
 
 footer[id="colophon"] {
     background-color: var(--second-color);
-    background-image:url(image/icone-dataterra-fonce.svg);
+    background-image:url(images/icone-dataterra-fonce.svg);
     background-repeat: no-repeat;
     background-position: center 100px;
     padding: 50px 0 0;
