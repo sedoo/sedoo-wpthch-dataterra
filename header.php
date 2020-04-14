@@ -200,12 +200,11 @@
         else { 
             if ($currentPostType !== "post") {
             ?>
-            <h1 class="site-title"><?php echo $title;?>  
-
-            <?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?>
-                <small><?php the_field('dataterra_pole_subtitle', $page_id);?></small>
-            <?php } ?>
-            </h1>
+            <h1 class="site-title"><?php echo $title;?><!--  
+            --><?php if (get_field('dataterra_pole_subtitle', $page_id)) {  ?><!--  
+            --><small><?php the_field('dataterra_pole_subtitle', $page_id);?></small><!--  
+            --><?php } ?><!--  
+            --></h1>
             <?php
             }
             ?>
