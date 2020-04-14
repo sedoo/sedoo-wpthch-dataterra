@@ -979,27 +979,27 @@ ol.tribe-list-widget h4 {
 }
 
 #shortcuts .social-link a[href*="twitter"] {
-    background: url("image/logo_twitter.svg") no-repeat;
+    background: url("images/logo_twitter.svg") no-repeat;
 }
 
 #shortcuts .social-link a[href*="facebook"] {
-    background: url("image/logo_facebook.svg") no-repeat;
+    background: url("images/logo_facebook.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="youtube"] {
-    background: url("image/logo_youtube.svg") no-repeat;
+    background: url("images/logo_youtube.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="linkedin"] {
-    background: url("image/logo_linkedin.svg") no-repeat;
+    background: url("images/logo_linkedin.svg") no-repeat;
 }
 #shortcuts .social-link a[href*="instagram"] {
-    background: url("image/logo_instagram.svg") no-repeat;
+    background: url("images/logo_instagram.svg") no-repeat;
 }
 
 /**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
 
 footer[id="colophon"] {
     background-color: var(--second-color);
-    background-image:url(image/icone-dataterra-fonce.svg);
+    background-image:url(images/icone-dataterra-fonce.svg);
     background-repeat: no-repeat;
     background-position: center 100px;
     padding: 50px 0 0;
