@@ -6,15 +6,6 @@ function sedoo_wpthch_dataterra_theme_enqueue_styles() {
 }
 
 function sedoo_wpthch_dataterra_widgets_init() {
-
-	register_sidebar( array(
-		'name'          => 'Home right sidebar',
-		'id'            => 'home_right_1',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
     
     register_sidebar( array(
 		'name'          => 'Footer menu 1',
