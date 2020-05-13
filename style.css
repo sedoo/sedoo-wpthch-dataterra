@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.9.6
+Version:      0.9.7
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -129,6 +129,37 @@ article ol {
 
 nav[id="burger-navigation"] .overlay .slick-slide .menu-item a {
     font-family: 'Open Sans', sans-serif;
+}
+
+.home .burger,
+.page-template-template-pole .burger {
+    border-left: 3px solid #FFF;
+    border-right: 3px solid #FFF;
+    color: #FFF;
+    top: -20px;
+}
+.home .burger .burger-icon span,
+.home .burger::before, 
+.home .burger::after,
+.page-template-template-pole .burger .burger-icon span,
+.page-template-template-pole .burger::before, 
+.page-template-template-pole .burger::after  {
+    background: #ffffff;;
+}
+
+.home.menu-expanded .burger,
+.page-template-template-pole.menu-expanded .burger{
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+    color: #333;
+}
+.home.menu-expanded .burger .burger-icon span,
+.home.menu-expanded .burger::before, 
+.home.menu-expanded .burger::after,
+.page-template-template-pole.menu-expanded .burger .burger-icon span,
+.page-template-template-pole.menu-expanded .burger::before, 
+.page-template-template-pole.menu-expanded .burger::after {
+    background: #333;;
 }
 
 p {
@@ -338,7 +369,7 @@ header[id="masthead"] > .wrapper {
 header[id="masthead"] .wrapper .header-title {
     width: 100%;
     /* padding:70px 20px; */
-    flex-wrap:wrap;
+    /* flex-wrap:wrap; */
     flex-direction: column;
     justify-content: space-around;
     height: 375px;
@@ -346,8 +377,12 @@ header[id="masthead"] .wrapper .header-title {
 
 
 .page-template-template-pole header[id="masthead"] .wrapper .header-title {
-    height: 438px;
+    /* height: 438px; */
 }
+
+.page-template-template-pole .homelink1 {
+    margin-right: 0;
+} 
 
 header[id="masthead"] .wrapper .header-title h1 {
     text-align: center;
@@ -394,17 +429,6 @@ header#cover {
     text-transform: uppercase;
 }
 
-@media (max-width:768px) {
-    .home header[id="masthead"] .wrapper .header-title h2.site-description{
-        font-size:3rem;
-    }
-}
-@media (max-width:575px) {
-    .home header[id="masthead"] .wrapper .header-title h2.site-description{
-        width: 100%;
-    }
-}
-
 .home header[id="masthead"] .wrapper .header-title p {
     width: 51%;
     padding:20px;
@@ -415,12 +439,14 @@ header#cover {
 }
 
 #home-button {
-    width: 50%;
+    width: 100%;
     margin:30px auto;
     display: flex;
     justify-content: center;
     z-index: 1;
 }
+
+
 
 [class^="homelink"] {
     padding: 10px 20px;
@@ -481,7 +507,7 @@ header#cover {
 
 .home .goDownLink {
     display: block;
-    width: 75px;
+    width: 25px;
     margin:0 auto;
 }
 .home #goDown {
@@ -499,7 +525,7 @@ header#cover {
 /*** SCHEMA  ***/
 
 .homeFirstColumn {
-    background:rgba(0,0,0,.05);
+    background:rgba(242,242,242,1);
     padding:50px 30px;
 }
 
@@ -520,6 +546,40 @@ header#cover {
  * animation rotate-90-cw
  * ----------------------------------------
  */
+
+.homeFirstColumn {
+    z-index: 20;
+}
+
+.homeSndColumn {
+    position: relative;
+}
+
+.homeSndColumn figure:first-of-type,
+.homeSndColumn figure:first-of-type img {
+    margin:0;
+}
+
+.homeSndColumn .wp-block-group__inner-container {
+    display: flex;
+    justify-content: space-between;
+}
+.homeSndColumn .wp-block-group__inner-container p {
+    margin-left:20px;
+}
+
+/* hide text pole */
+[class*="textAnim"] {
+    opacity:0;
+    /* width: 0; */
+    position: absolute;
+    bottom:25%;
+    padding:20px;
+    border-top:2px solid;
+    background:rgba(255,255,255,.9);
+    transition:all .5s .4s ease-in;
+}
+
  @-webkit-keyframes rotate-45-cw {
     0% {
       -webkit-transform: rotate(0);
@@ -728,7 +788,7 @@ ul[id="primary-menu"] .menu-item .sub-menu {
     background:var(--second-color) !important;
 } */
 header[id="masthead"] .wrapper .nav-container {
-    z-index: 4;
+    z-index: 200;
 }
 
 /**** PAGE ***/ 
@@ -1196,7 +1256,8 @@ aside[id="stickyMenu"] > div [id="tocList"] li a {
 article.category-atmosphere header.entry-header p {
 	background:var(--aeris-color);
 }
-.post-wrapper .post.category-atmosphere {
+.post-wrapper .post.category-atmosphere,
+.textAnimAeris {
 	border-color:var(--aeris-color);
 }
 
@@ -1204,14 +1265,16 @@ article.category-atmosphere header.entry-header p {
 article.category-ocean header.entry-header p {
 	background:var(--ocean-color);
 }
-.post-wrapper .post.category-ocean {
+.post-wrapper .post.category-ocean,
+.textAnimOdatis  {
 		border-color:var(--ocean-color);
 }
 /*** SURFACES CONTINENTALES ***/
 article.category-surfaces-continentales header.entry-header p {
 	background:var(--theia-color);
 }
-.post-wrapper .post.category-surfaces-continentales {
+.post-wrapper .post.category-surfaces-continentales,
+.textAnimTheia {
 	border-color:var(--theia-color);
 }
 
@@ -1219,7 +1282,8 @@ article.category-surfaces-continentales header.entry-header p {
 article.category-terre-solide header.entry-header p {
 	background:var(--formater-color);
 }
-.post-wrapper .post.category-terre-solide {
+.post-wrapper .post.category-terre-solide,
+.textAnimFormater {
 	border-color:var(--formater-color);
 }
 /*** DINAMIS ***/
@@ -1235,3 +1299,52 @@ article.category-dinamis.hentry header.entry-header p {
 	border-color:var(--main-color);
 }
 
+@media (max-width: 1024px) {
+    .home nav[id="primary-navigation"] ul li a,
+    .cover-pole nav[id="primary-navigation"] ul li a {
+        color:#222;
+        text-shadow: none;
+    }
+}
+
+@media (max-width:768px) {
+    .home header[id="masthead"] .wrapper .header-title h2.site-description{
+        font-size:3rem;
+    }
+}
+@media (max-width:575px) {
+    .home header[id="masthead"] .wrapper .header-title h2.site-description{
+        width: 100%;
+    }
+}
+
+@media (max-width:470px) {
+    .home header[id="masthead"] {
+        height: auto;
+    }
+    
+    .home header[id="masthead"] .wrapper .header-title h2.site-description{
+        font-size:2.5rem;
+    }
+    header[id="masthead"] .wrapper .header-title {
+        height: auto;
+    }
+    .home header[id="masthead"] .wrapper .header-title p {
+        width: 100%;
+    }
+    #home-button {
+        flex-direction: column;
+        margin:10px auto;
+    }
+    #home-button > div {
+        margin:10px auto;
+    }
+    .home #goDownLinkArea {
+        display: none;
+    }
+}
+@media (max-height:520px) {
+    .home header[id="masthead"] {
+        height: auto;
+    }
+}
