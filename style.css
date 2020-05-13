@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.9.6
+Version:      0.9.7
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -525,7 +525,7 @@ header#cover {
 /*** SCHEMA  ***/
 
 .homeFirstColumn {
-    background:rgba(0,0,0,.05);
+    background:rgba(242,242,242,1);
     padding:50px 30px;
 }
 
@@ -546,6 +546,40 @@ header#cover {
  * animation rotate-90-cw
  * ----------------------------------------
  */
+
+.homeFirstColumn {
+    z-index: 20;
+}
+
+.homeSndColumn {
+    position: relative;
+}
+
+.homeSndColumn figure:first-of-type,
+.homeSndColumn figure:first-of-type img {
+    margin:0;
+}
+
+.homeSndColumn .wp-block-group__inner-container {
+    display: flex;
+    justify-content: space-between;
+}
+.homeSndColumn .wp-block-group__inner-container p {
+    margin-left:20px;
+}
+
+/* hide text pole */
+[class*="textAnim"] {
+    opacity:0;
+    /* width: 0; */
+    position: absolute;
+    bottom:25%;
+    padding:20px;
+    border-top:2px solid;
+    background:rgba(255,255,255,.9);
+    transition:all .5s .4s ease-in;
+}
+
  @-webkit-keyframes rotate-45-cw {
     0% {
       -webkit-transform: rotate(0);
@@ -1222,7 +1256,8 @@ aside[id="stickyMenu"] > div [id="tocList"] li a {
 article.category-atmosphere header.entry-header p {
 	background:var(--aeris-color);
 }
-.post-wrapper .post.category-atmosphere {
+.post-wrapper .post.category-atmosphere,
+.textAnimAeris {
 	border-color:var(--aeris-color);
 }
 
@@ -1230,14 +1265,16 @@ article.category-atmosphere header.entry-header p {
 article.category-ocean header.entry-header p {
 	background:var(--ocean-color);
 }
-.post-wrapper .post.category-ocean {
+.post-wrapper .post.category-ocean,
+.textAnimOdatis  {
 		border-color:var(--ocean-color);
 }
 /*** SURFACES CONTINENTALES ***/
 article.category-surfaces-continentales header.entry-header p {
 	background:var(--theia-color);
 }
-.post-wrapper .post.category-surfaces-continentales {
+.post-wrapper .post.category-surfaces-continentales,
+.textAnimTheia {
 	border-color:var(--theia-color);
 }
 
@@ -1245,7 +1282,8 @@ article.category-surfaces-continentales header.entry-header p {
 article.category-terre-solide header.entry-header p {
 	background:var(--formater-color);
 }
-.post-wrapper .post.category-terre-solide {
+.post-wrapper .post.category-terre-solide,
+.textAnimFormater {
 	border-color:var(--formater-color);
 }
 /*** DINAMIS ***/
