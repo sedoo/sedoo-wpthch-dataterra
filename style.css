@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1, .h1 {
-    font-size: 5rem;
+    font-size:3.125rem;
     color:#FFF;
 }
 h1::after {
@@ -83,7 +83,7 @@ h1::after {
 }
 
 h2, .h2 {
-    font-size: 3rem;
+    font-size:1.875rem;
 }
 
 h3 {
@@ -176,13 +176,13 @@ figure {
 }
 
 figcaption {     
-    font-size: 1.25rem; 
+    font-size:.75rem; 
     letter-spacing:1px;
 }
 
 table {
     border:1px solid #ccc;
-    font-size:1.4rem;
+    font-size:0.875rem;
 }
 
 table tr {
@@ -200,7 +200,7 @@ th, td {
 }
 
 blockquote {
-    font-size: 3.1rem;
+    font-size:1.9375;
 }
 
 .wp-block-image figcaption {
@@ -423,7 +423,7 @@ header#cover {
 .home header[id="masthead"] .wrapper .header-title h2.site-description{
     width: 80%;
     margin:0 auto;
-    font-size: 4rem;
+    font-size:2.5rem;
     color:#FFF;
     text-align: center;
     text-transform: uppercase;
@@ -433,7 +433,7 @@ header#cover {
     width: 51%;
     padding:20px;
     margin:30px auto;
-    font-size:1.5rem;
+    font-size:0.9375rem;
     color:#FFF;
     text-align: center;
 }
@@ -453,7 +453,7 @@ header#cover {
     display: inline-block   ;
     border-radius: 50px;
     border: 1px solid #FFF;
-    font-size: 1.3rem;
+    font-size:0.8125rem;
     text-decoration: none;
     text-shadow: none;
     text-transform:uppercase;
@@ -497,7 +497,7 @@ header#cover {
 }
 
 .home h2 {
-    font-size:3.2rem;
+    font-size:2rem;
 }
 
 .home #goDownLinkArea {
@@ -769,7 +769,7 @@ ul.homeListPole a {
     padding:5px 10px 5px 70px;
     text-decoration: none;
     color:#000;
-    font-size: 2rem;
+    font-size:1.25rem;
     font-weight: bold;
 }
 
@@ -844,7 +844,7 @@ header[id="masthead"] .wrapper .nav-container {
 }
 
 .content-list h2 {
-    font-size:2rem;
+    font-size:1.25rem;
     margin-top:10px;
 }
 
@@ -870,7 +870,7 @@ header[id="masthead"] .wrapper .nav-container {
 }
 
 .post .group-content .entry-footer p, .post-horizontal .group-content .entry-footer p {
-    font-size: 1.8rem;
+    font-size:1.125rem;
     margin: 0;
     color:#999;
 }
@@ -984,7 +984,7 @@ ol.tribe-list-widget li {
 }
 
 ol.tribe-list-widget h4 {
-    font-size: 1.6rem;
+    font-size:1rem;
     font-weight: normal;
     margin-bottom:0;
 }
@@ -1011,7 +1011,7 @@ ol.tribe-list-widget h4 {
     background:var(--main-color);
     color:white;
     padding:10px 10px 5px;
-    font-size: 1.6rem;
+    font-size:1rem;
     text-transform: uppercase;
 }
 
@@ -1025,7 +1025,7 @@ ol.tribe-list-widget h4 {
     font-size:inherit;
     color:white;
     width: 50%;
-    font-size: 5rem;
+    font-size:2rem;
     text-transform: uppercase;
 }
 
@@ -1144,7 +1144,7 @@ footer .social-list ul.inline-list {
 
 .footer-menu.widget-area ul.menu > li {
     font-weight: bold;
-    font-size: 2rem;
+    font-size:1.25rem;
     margin-bottom: 30px;
 } 
 
@@ -1154,7 +1154,7 @@ footer .social-list ul.inline-list {
 
 .footer-menu.widget-area ul.menu > li li {
     margin:10px 0;
-    font-size: 1.5rem;
+    font-size:0.9375rem;
     font-weight: normal;
 }
 
@@ -1188,7 +1188,7 @@ footer .social-list ul.inline-list {
 
 footer .intranet li a{
     display: block;
-    font-size: 1.8rem;
+    font-size:1.125rem;
     padding:3px 10px;
 }
 
@@ -1207,7 +1207,7 @@ aside[id="stickyMenu"] {
     background:rgba(255,255,255,.9);
 }
 aside[id="stickyMenu"] > div [id="tocList"] li a {
-    font-size:1.5rem;
+    font-size:0.9375rem;
     display:block;
 	font-family: 'Open Sans';
 	padding: 10px 0 5px;
@@ -1227,7 +1227,7 @@ aside[id="stickyMenu"] > div [id="tocList"] li a {
     color:#000  !important;
     text-transform: uppercase;
     box-shadow: none;
-    font-size:1.3rem;
+    font-size:0.8125rem;
 }
 .wp-block-button .wp-block-button__link:hover,
 #content-area .posts-navigation a:hover {
@@ -1255,7 +1255,7 @@ aside[id="stickyMenu"] > div [id="tocList"] li a {
     color:#000  !important;
     text-transform: uppercase;
     box-shadow: none;
-    font-size:1.3rem;
+    font-size:0.8125rem;
 } */
 
 /*** ATMOSPHERE ***/
@@ -1315,7 +1315,7 @@ article.category-dinamis.hentry header.entry-header p {
 
 @media (max-width:768px) {
     .home header[id="masthead"] .wrapper .header-title h2.site-description{
-        font-size:3rem;
+        font-size:1.875rem;
     }
 }
 @media (max-width:575px) {
@@ -1330,7 +1330,7 @@ article.category-dinamis.hentry header.entry-header p {
     }
     
     .home header[id="masthead"] .wrapper .header-title h2.site-description{
-        font-size:2.5rem;
+        font-size:1.5625rem;
     }
     header[id="masthead"] .wrapper .header-title {
         height: auto;
