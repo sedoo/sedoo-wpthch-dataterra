@@ -55,8 +55,23 @@ $options_list_footer = get_field('list_choice', 'option');
                 </div>
                 <?php endif; ?>
                 <?php 
-                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
+                 if(get_field('sedoo_labs_footer_replace_logo', 'option') == true) {
+                    if(get_field('sedoo_labs_footer_url_image', 'option')) { 
+                        echo '<a class="footer_img" href="'.get_field('sedoo_labs_footer_url_image', 'option').'">';
+                    }
+                        ?>
+                        <figure>
+                            <img alt="" class=" object-fit-contain" src="<?php echo get_field('sedoo_labs_image_in_footer', 'option'); ?>" >
+                        </figure>
+                        <?php 
+                    if(get_field('sedoo_labs_footer_url_image', 'option')) { 
+                        echo '</a>';
+                    }
+                } else {
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); 
+                }
+                ?>
                 <img class="object-fit-contain" src="<?php echo $image[0]; ?>" alt="" />
                 
             </div>
