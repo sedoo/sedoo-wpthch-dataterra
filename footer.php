@@ -105,6 +105,28 @@ $options_list_footer = get_field('list_choice', 'option');
                 </ul>
             </div>
         <?php endif; ?>
+        <?php if (has_nav_menu('mentions-menu') || get_field('footer_show_copyright', 'option') ) { ?>
+            <div class="copyright">
+                <div class="site-info wrapper">
+                    <?php if (has_nav_menu('mentions-menu')) { 
+                    ?>
+                    <nav>
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'mentions-menu',
+                            'menu_id'        => 'mentions-menu',
+                        ) );
+                    ?>
+                    </nav>
+                    <?php
+                    } ?>
+                    <?php if (get_field('footer_show_copyright', 'option')) {
+                        echo "<p>".get_field('footer_copyright_text', 'option')."</p>";
+                    }
+                    ?>       
+                </div><!-- .site-info -->
+            </div>
+        <?php } ?>  
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
