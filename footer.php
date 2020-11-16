@@ -119,23 +119,37 @@ $options_list_footer = get_field('list_choice', 'option');
                     ?>
                     </nav>
                     <?php
-                    } ?>
-                    <?php if (get_field('footer_show_copyright', 'option')) {
-                        echo "<p>".get_field('footer_copyright_text', 'option')."</p>";
+                    } ?>                    
+                    <?php 
+                    // show copyright
+                    if (get_field('footer_show_copyright', 'option')) {
+                        ?>
+                        <p>
+                        <?php echo get_field('footer_copyright_text', 'option');?> - <a href="https://www.sedoo.fr" title="Visit Sedoo website">SEDOO (<?php echo __('Data service OMP', 'sedoo-wpth-labs');?>)</a>
+                        </p>
+                    <?php
                     }
-                    ?>       
+                    ?>    
                 </div><!-- .site-info -->
             </div>
         <?php } ?>  
 	</footer><!-- #colophon -->
+    <?php
+    if ( wp_is_mobile() ) {
+    // end div mp-pusher    
+    ?>
+    </div> 
+    <?php } ?>
 </div><!-- #page -->
 
-<?php wp_footer(); ?>   
-<!--
+<?php wp_footer(); 
+if (wp_is_mobile() ) {
+?>
 <script>
-    /* INIT DARKMODE */
-    new Darkmode().showWidget();   
+new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ), {type : 'cover'} );
 </script>
--->
+<?php
+}
+?>   
 </body>
 </html>
