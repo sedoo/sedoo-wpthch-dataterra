@@ -175,6 +175,11 @@ function sedoo_wpthch_dataterra_show_categories($categories, $slugRewrite) {
   }
 
 
+function sedoo_wpthch_dataterra_custom_scripts() {
+    wp_enqueue_script( 'dataterra-anim-js', get_stylesheet_directory_uri() . '/js/anim.js', array( 'jquery' ),'',true );
+}
+add_action( 'wp_enqueue_scripts', 'sedoo_wpthch_dataterra_custom_scripts' );
+
 /***
  * REGISTER MENU AREA
  */
