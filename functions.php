@@ -1,7 +1,7 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'sedoo_wpthch_dataterra_theme_enqueue_styles' );
 function sedoo_wpthch_dataterra_theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false );
 
 }
 
