@@ -296,11 +296,12 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 
 header[id="masthead"],
 .header-title {
-    position: relative;
+    position: static;
     background-size: cover;
     background-position: center;
     background-color:transparent;
     background-repeat: no-repeat;
+    border: none;
 }
 
 .home header[id="masthead"],
@@ -324,7 +325,7 @@ header[id="masthead"] .wrapper .header-title h1::before {
 
 header[id="masthead"] .wrapper .header-title h1 {
     position: relative;
-    z-index: 1;
+    z-index: 500;
 }
 
 header[id="masthead"] .wrapper .header-title h1::before {    
@@ -341,8 +342,8 @@ header[id="masthead"] .wrapper .header-title h1::before {
     flex-wrap: wrap;
     justify-content: space-between;
     align-self: flex-start;
-    position:sticky;
-    top:0;
+    /* position:sticky;
+    top:0; */
 }
     
 header[id="masthead"] > .wrapper {
