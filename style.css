@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-dataterra
 Description:  dataterra, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.2.0
+Version:      1.2.1
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-dataterra
@@ -1224,20 +1224,22 @@ aside[id="stickyMenu"] > div [id="tocList"] li a {
 .wp-block-button .wp-block-button__link,
 #content-area .posts-navigation a {
     border-radius: 50px;
-    background: #FFF !important;
-    border:1px solid #000  !important;
-    color:#000  !important;
+    background: #FFF;
+    border:1px solid #000 ;
+    color:#000;
     text-transform: uppercase;
     box-shadow: none;
     font-size:0.8125rem;
 }
 .wp-block-button .wp-block-button__link:hover,
 #content-area .posts-navigation a:hover {
-    background: var(--main-color) !important;
-    color:#FFF !important;
-    border-color:var(--main-color) !important;
+    background: var(--main-color);
+    color:#FFF;
+    border-color:var(--main-color);
 }
-
+.wp-block-button .wp-block-button__link.has-background {
+    border:none;
+}
 /** NAVIGATION LINKS ***/
 
 .posts-navigation {
